@@ -1,9 +1,9 @@
 local framework = {
     functions = {},
     connections = {},
-    initiated = tick()
 };
 
+local init = tick();
 writefile("sentinelLogs.txt", "sentinel initiated.\n");
 
 -- functions
@@ -18,7 +18,7 @@ do
     getservice = framework.functions.getservice; 
     -- 
     framework.functions.logs = function(txt)
-        appendfile("sentinelLogs.txt", txt.." | "..string.format("%.3f s", tick() - framework.initiated));
+        appendfile("sentinelLogs.txt", txt.." | "..string.format("%.3f s", tick() - init));
         appendfile("sentinelLogs.txt", "\n");
     end;
     logs = framework.functions.logs;
