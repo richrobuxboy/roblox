@@ -42,9 +42,5 @@ do
     end;
     unload = modules.unload;
 end;
--- esp
-do
-    
-end;
 --
 return framework;
